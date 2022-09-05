@@ -1,4 +1,5 @@
 const userForm = document.querySelector('#userForm')
+const arr = []
 
 function renderListItem (stoneName) {
     const item = document.createElement('li')
@@ -21,6 +22,9 @@ const handleForm = (ev) => {
     
     const stones = document.querySelector('#stones')
     stones.appendChild(renderList(stone['stoneName']))
+
+    arr.push(stone['stoneName'])
+    console.log(arr)
 
     f.reset()
     f.focus()
