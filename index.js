@@ -9,14 +9,14 @@ function renderButton() {
 
 function renderListItem(stoneName) {
     const item = document.createElement('li')
-    item.textContent = stoneName
-    item.appendChild(renderButton())
+    item.textContent = stoneName    
     return item
 }
 
 function renderList(data) {
     const list = document.createElement('ul')
     list.appendChild(renderListItem(data))
+    list.appendChild(renderButton())
     return list
 }
 
