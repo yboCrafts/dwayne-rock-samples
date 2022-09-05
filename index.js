@@ -1,13 +1,20 @@
 const userForm = document.querySelector('#userForm')
 const arr = []
 
-function renderListItem (stoneName) {
+function renderButton() {
+    const delButton = document.createElement('button')
+    delButton.textContent = 'del'
+    return delButton
+} 
+
+function renderListItem(stoneName) {
     const item = document.createElement('li')
     item.textContent = stoneName
+    item.appendChild(renderButton())
     return item
 }
 
-function renderList (data) {
+function renderList(data) {
     const list = document.createElement('ul')
     list.appendChild(renderListItem(data))
     return list
