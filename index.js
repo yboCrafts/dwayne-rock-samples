@@ -19,7 +19,8 @@ const handleForm = (ev) => {
         stoneName: f.stoneName.value,
     }
     
-    console.log(stone['stoneName'])
+    const stones = document.querySelector('#stones')
+    stones.appendChild(renderList(stone['stoneName']))
 }
 
 userForm.addEventListener('submit', handleForm)
