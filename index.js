@@ -6,8 +6,10 @@ function renderListItem (stoneName) {
     return item
 }
 
-function renderList () {
-
+function renderList (data) {
+    const list = document.createElement('ul')
+    list.appendChild(renderListItem(data))
+    return list
 }
 
 const handleForm = (ev) => {
