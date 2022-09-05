@@ -6,14 +6,18 @@ function renderListItem (stoneName) {
     return item
 }
 
-function renderList(data) {
-    
+function renderList () {
+
 }
 
 const handleForm = (ev) => {
     ev.preventDefault();
-
-
+    const f = ev.target;
+    const stone = {
+        stoneName: f.stoneName.value,
+    }
+    
+    console.log(stone['stoneName'])
 }
 
 userForm.addEventListener('submit', handleForm)
