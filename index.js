@@ -21,6 +21,9 @@ const handleForm = (ev) => {
     
     const stones = document.querySelector('#stones')
     stones.appendChild(renderList(stone['stoneName']))
+
+    f.reset()
+    f.focus()
 }
 
 userForm.addEventListener('submit', handleForm)
