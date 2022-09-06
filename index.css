@@ -10,6 +10,9 @@ ul > li {
 
 li > button {
     margin-left: .5rem;
+    background-color: rgb(206, 35, 35);
+    color: rgb(228, 215, 215);
+    padding: 1rem;
 }
 
 ul:nth-of-type(even) {
