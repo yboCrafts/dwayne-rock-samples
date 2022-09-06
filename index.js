@@ -10,14 +10,14 @@ function renderButton() {
 
 function renderListItem(stoneName) {
     const item = document.createElement('li')
-    item.textContent = stoneName    
+    item.textContent = stoneName 
+    item.appendChild(renderButton())   
     return item
 }
 
 function renderList(data) {
     const list = document.createElement('ul')
-    list.appendChild(renderListItem(data))
-    list.appendChild(renderButton())
+    list.appendChild(renderListItem(data))    
     return list
 }
 
@@ -40,7 +40,14 @@ const handleForm = (ev) => {
 
 const delList = (ev) => {
     const f = ev.target
-    ev.target.closest('ul').remove()
+    arr.forEach((value, index)=>{
+        console.log()        
+        if(value == f.closest('li').innerText.replace('del', '')) {
+            arr.splice(index, 1)
+            console.log(arr)
+        }
+    })
+    f.closest('ul').remove()
 }
 
 stones.addEventListener('click', delList)
