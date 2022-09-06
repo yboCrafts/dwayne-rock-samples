@@ -1,4 +1,5 @@
 const userForm = document.querySelector('#userForm')
+const stones = document.querySelector('#stones')
 const arr = []
 
 function renderButton() {
@@ -37,4 +38,10 @@ const handleForm = (ev) => {
     f.focus()
 }
 
+const delList = (ev) => {
+    const f = ev.target
+    ev.target.closest('ul').remove()
+}
+
+stones.addEventListener('click', delList)
 userForm.addEventListener('submit', handleForm)
