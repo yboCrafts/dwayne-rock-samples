@@ -6,3 +6,6 @@ li > button {
     margin-left: .5rem;
 }
 
+ul:nth-of-type(even) {
+    background-color: whitesmoke;
+}
