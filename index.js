@@ -11,6 +11,12 @@ const app = {
             ev.preventDefault()
             this.handleSubmit(ev)
         })
+
+        document
+            .querySelector(selectors.listSelector)
+            .addEventListener('click', ev => {                
+                ev.target.closest('.flick').remove()
+        })
     },    
 
     renderListItem(flick) {
