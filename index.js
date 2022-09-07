@@ -1,6 +1,7 @@
 const app = {    
-    init(selectors) {
+    init(selectors) {        
         this.max = 0
+        this.list = document.querySelector(selectors.listSelector)
 
         document
         .querySelector(selectors.flickForm)
@@ -10,6 +11,12 @@ const app = {
         })
     },    
 
+    renderListItem(flickName) {
+        const item = document.createElement('li')
+        item.textContent = flickName
+        return item
+    },
+
     handleSubmit(ev) {        
         const f = ev.target
         flick = {
@@ -18,11 +25,14 @@ const app = {
         }
         console.log(flick)
 
+        const item = this.renderListItem(flick.name)
+        this.list.appendChild(item)
+
         f.reset()
     },
 }
 
 app.init({
     flickForm: '#flickForm',
-    flickList: '#flickList',
+    listSelector: '#flickList',
 })
