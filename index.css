@@ -14,7 +14,7 @@ position: absolute;
 left: 0;
 width: 100%;
 text-align: center;
-margin-top: 1.4rem;
+/* margin-top: 1.4rem; */
 font-family: 'Bungee', cursive;
 text-shadow: 0 0 10px #fff,
                 0 0 20px #fff,
@@ -44,4 +44,16 @@ main {
     width: 80%;
     background-color: whitesmoke;
     margin: 1rem auto;
+}
+
+.actions .button{
+    margin-bottom: 0;
+}
+
+.flickName {
+    margin: 0 0.75rem;
+}
+
+.template {
+    display: none;
 }

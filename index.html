@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <h1>Dwayne rock samples</h1>
+        <!-- <h1>Dwayne rock samples</h1> -->
         <img src="dwayne.png" alt="">
     </header>
 
@@ -21,13 +21,13 @@
                     type="text"
                     class="input-group-field"
                     placeholder="Name a flick"
-                    id="flickName"
+                    name="flickName"
                     autofocus
                     required
                 >
                 <div class="input-group-button">
                     <button 
-                        class="button"
+                        class="button success"
                         type="submit"
                     >
                         Add flick
@@ -36,7 +36,15 @@
             </div>
         </form>              
 
-        <ul id="flickList"></ul>
+        <ul id="flickList" class="no-bullet">
+            <li class="template flick grid-x align-middle">
+                <span class="flickName cell auto"></span>
+                <span class="actions cell shrink">
+                    <button class="button warning">fav</button>
+                    <button class="button alert">del</button>
+                </span>
+            </li>
+        </ul>
     </main>
     
     <script src="index.js"></script>
