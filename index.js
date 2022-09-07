@@ -14,8 +14,17 @@ const app = {
 
         document
             .querySelector(selectors.listSelector)
-            .addEventListener('click', ev => {                
+            .addEventListener('click', ev => {
+                const f = ev.target
+                this.flicks.forEach((flick, index) => {
+                    if(flick.id == f.closest('.flick').dataset.id) {
+                        this.flicks.splice(index, 1)
+                        console.log(this.flicks)
+                    }
+                })                
+                
                 ev.target.closest('.flick').remove()
+
         })
     },    
 
