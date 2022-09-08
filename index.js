@@ -28,7 +28,18 @@ const app = {
                     f.closest('.flick').remove()
                 }
 
-                if(f.isEqualNode(this.list.querySelector('.button.fav')) == true) {                    
+                if(f.isEqualNode(this.list.querySelector('.button.fav')) == true) { 
+                    const replaceFlicks = this.flicks.map((flick, index) => {
+                        if(flick.id == f.closest('.flick').dataset.id) {
+                            return {...flick, ...flick, fav: true,}
+                        }
+
+                        return flick
+                    })
+
+                    this.flicks = replaceFlicks
+                    console.log(this.flicks)
+
                     f.closest('.flick').classList.toggle('flick-fav')
                 }
         })
@@ -49,7 +60,7 @@ const app = {
         const f = ev.target
         const flick = {
             id: ++this.max,
-            name: f.flickName.value,
+            name: f.flickName.value,            
         }
 
         this.flicks.unshift(flick)
