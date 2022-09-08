@@ -27,3 +27,7 @@ main {
 .template {
     display: none;
 }
+
+.flick-fav {
+    background-color: rgb(243, 243, 95);
+}

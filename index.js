@@ -25,7 +25,11 @@ const app = {
                         }
                     })                
                     
-                    ev.target.closest('.flick').remove()
+                    f.closest('.flick').remove()
+                }
+
+                if(f.isEqualNode(this.list.querySelector('.button.fav')) == true) {                    
+                    f.closest('.flick').classList.toggle('flick-fav')
                 }
         })
     },    
