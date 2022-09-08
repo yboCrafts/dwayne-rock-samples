@@ -9,22 +9,24 @@ const app = {
         .querySelector(selectors.flickForm)
         .addEventListener('submit', ev => {
             ev.preventDefault()
-            this.handleSubmit(ev)
+            this.handleSubmit(ev)            
         })
 
         document
             .querySelector(selectors.listSelector)
             .addEventListener('click', ev => {
                 const f = ev.target
-                this.flicks.forEach((flick, index) => {
-                    if(flick.id == f.closest('.flick').dataset.id) {
-                        this.flicks.splice(index, 1)
-                        console.log(this.flicks)
-                    }
-                })                
-                
-                ev.target.closest('.flick').remove()
 
+                if(f.isEqualNode(this.list.querySelector('.button.delete')) == true) {
+                    this.flicks.forEach((flick, index) => {
+                        if(flick.id == f.closest('.flick').dataset.id) {
+                            this.flicks.splice(index, 1)
+                            console.log(this.flicks)
+                        }
+                    })                
+                    
+                    ev.target.closest('.flick').remove()
+                }
         })
     },    
 
@@ -50,7 +52,7 @@ const app = {
         console.log(this.flicks)
 
         const item = this.renderListItem(flick)
-        this.list.insertBefore(item, this.list.firstChild)
+        this.list.insertBefore(item, this.list.firstChild)     
 
         f.reset()
     },
