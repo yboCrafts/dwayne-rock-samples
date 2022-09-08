@@ -16,10 +16,11 @@ const app = {
             .querySelector(selectors.listSelector)
             .addEventListener('click', ev => {
                 const f = ev.target
+                const id = f.closest('.flick').dataset.id
 
                 if(f.isEqualNode(this.list.querySelector('.button.delete')) == true) {
                     this.flicks.forEach((flick, index) => {
-                        if(flick.id == f.closest('.flick').dataset.id) {
+                        if(flick.id == id) {
                             this.flicks.splice(index, 1)
                             console.log(this.flicks)
                         }
@@ -29,8 +30,8 @@ const app = {
                 }
 
                 if(f.isEqualNode(this.list.querySelector('.button.fav')) == true) { 
-                    const replaceFlicks = this.flicks.map((flick, index) => {
-                        if(flick.id == f.closest('.flick').dataset.id) {
+                    const replaceFlicks = this.flicks.map(flick => {
+                        if(flick.id == id) {
                             return {...flick, ...flick, fav: true,}
                         }
 
